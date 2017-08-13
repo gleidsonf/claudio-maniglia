@@ -1,0 +1,90 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Dr. Cláudio Maniglia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <body>
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="#">Claudio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#professional">Profissional</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news">Notícias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header id="home" class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Welcome To Our Studio!</div>
+          <div class="intro-heading">It's Nice To Meet You</div>
+          <a href="#services" class="btn btn-xl">Tell Me More</a>
+        </div>
+      </div>
+    </header>
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Clínica</h2>
+            <h3 class="section-subheading text-muted">Conheça nossa clínica</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Sed mattis leo pretium lectus molestie, quis fringilla ante facilisis. Pellentesque interdum laoreet turpis ac pretium. Cras ac ullamcorper ante. Etiam quis convallis libero. Pellentesque ultrices, magna nec fringilla convallis, nunc mi bibendum nisi, at fringilla lacus tortor eu urna. Phasellus quis diam nec nunc sagittis pulvinar. Fusce velit magna, rutrum id euismod ut, tincidunt nec ipsum. Fusce eleifend mi ligula, ut bibendum metus imperdiet vel. Donec consectetur mi a imperdiet aliquet. In quis efficitur tellus, dignissim ultricies nunc. Curabitur nec erat sed odio vestibulum finibus.
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <img src="{% static 'img/clinic.jpg' %}" alt="Foto da clínica" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="professional">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Dr. Cláudio Maniglia</h2>
+            <h3 class="section-subheading text-muted">Especialista em Endodontia</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="news">
+    </section>
+    <section id="contact">
+    </section>
+    <div class="container">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+  </body>
+</html>
