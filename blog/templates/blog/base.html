@@ -4,87 +4,456 @@
     <title>Dr. Cláudio Maniglia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-  </head>
-  <body>
-    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'www/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/superfish.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/owl.theme.default.min.css' %}">
 
-        <a class="navbar-brand" href="#">Claudio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#professional">Profissional</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#news">Notícias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contato</a>
-            </li>
-          </ul>
+    <link rel="stylesheet" href="{% static 'www/css/style.css' %}">
+
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!--Heading Bar start-->
+    <div class="heading-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12  item">
+            <div class="social">
+              <ul>
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i  class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i  class="fa fa-linkedin"></i></a></li>
+                <li><a href=""><i  class="fa fa-pinterest"></i></a></li>
+                <li><a href=""><i  class="fa fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12 item ">
+            <div class="call-part">
+              <div class="icon">
+                <p><i class="fa fa-phone"></i></p>
+              </div>
+              <div class="text">
+                <h3>Call Us: +111 222 3333</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-    <header id="home" class="masthead">
+    </div>
+    <!--Heading Bar End-->
+
+    <header>
       <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Welcome To Our Studio!</div>
-          <div class="intro-heading">It's Nice To Meet You</div>
-          <a href="#services" class="btn btn-xl">Tell Me More</a>
+        <div class="row">
+          <div class="col-md-3 logo">
+            <a href="#home"><img src="{% static 'www/img/logo.png' %}" alt=""></a>
+          </div>
+          <!-- Nav Start -->
+          <div class="col-md-9 nav-wrapper">
+            <div class="nav">
+              <ul class="sf-menu" id="menu">
+                <li class="current-menu-item"><a href="#">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#professional">Profissional</a></li>
+                <li><a href="#blog">Blog</a>
+                  <ul>
+                    {% for tag in tags %}
+                    <li><a href="#">{{ tag.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                <li><a href="#contact">Contato</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Nav End-->
         </div>
       </div>
     </header>
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Clínica</h2>
-            <h3 class="section-subheading text-muted">Conheça nossa clínica</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            Sed mattis leo pretium lectus molestie, quis fringilla ante facilisis. Pellentesque interdum laoreet turpis ac pretium. Cras ac ullamcorper ante. Etiam quis convallis libero. Pellentesque ultrices, magna nec fringilla convallis, nunc mi bibendum nisi, at fringilla lacus tortor eu urna. Phasellus quis diam nec nunc sagittis pulvinar. Fusce velit magna, rutrum id euismod ut, tincidunt nec ipsum. Fusce eleifend mi ligula, ut bibendum metus imperdiet vel. Donec consectetur mi a imperdiet aliquet. In quis efficitur tellus, dignissim ultricies nunc. Curabitur nec erat sed odio vestibulum finibus.
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <img src="{% static 'img/clinic.jpg' %}" alt="Foto da clínica" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="professional">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Dr. Cláudio Maniglia</h2>
-            <h3 class="section-subheading text-muted">Especialista em Endodontia</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="news">
-    </section>
-    <section id="contact">
-    </section>
-    <div class="container">
-      {% block content %}
+    <!--Header End-->
+    <section id="home" class="main-slider">
 
-      {% endblock %}
+  		<div class="slide-carousel owl-item">
+  			<div class="item" style="background-image:url({% static 'www/img/slide1.jpg' %});">
+  				<div class="overlay"></div>
+  				<div class="text">
+  					<div class="this-item">
+  						<h2>We Have Experienced Doctors</h2>
+  					</div>
+  					<div class="this-item">
+  						<h3>You will get well experienced quality doctors here</h3>
+  					</div>
+  					<div class="this-item">
+  						<p><a href="#">See Details</a></p>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="item" style="background-image:url({% static 'www/img/slide2.jpg' %});">
+  				<div class="overlay"></div>
+  				<div class="text">
+  					<div class="this-item">
+  						<h2>We Provide Best & Quality Service</h2>
+  					</div>
+  					<div class="this-item">
+  						<h3>We do not compromise anything to keep quality service</h3>
+  					</div>
+  					<div class="this-item">
+  						<p><a href="#">See Details</a></p>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="item" style="background-image:url({% static 'www/img/slide3.jpg' %});">
+  				<div class="overlay"></div>
+  				<div class="text">
+  					<div class="this-item">
+  						<h2>We Are 24 Hours Available</h2>
+  					</div>
+  					<div class="this-item">
+  						<h3>When you will get into a problem, we are always here</h3>
+  					</div>
+  					<div class="this-item">
+  						<p><a href="#">See Details</a></p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+    <!---Service Section Start-->
+    <div id="about" class="service bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading-col">
+              <h2>Sobre a clínica</h2>
+              <div class="border"></div>
+              <p class="down">Conheça um pouco mais sobre a clínica</p>
+              <div class="gap-30"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <p>Sed mattis leo pretium lectus molestie, quis fringilla ante facilisis. Pellentesque interdum laoreet turpis ac pretium. Cras ac ullamcorper ante. Etiam quis convallis libero. Pellentesque ultrices, magna nec fringilla convallis, nunc mi bibendum nisi, at fringilla lacus tortor eu urna. Phasellus quis diam nec nunc sagittis pulvinar. Fusce velit magna, rutrum id euismod ut, tincidunt nec ipsum. Fusce eleifend mi ligula, ut bibendum metus imperdiet vel. Donec consectetur mi a imperdiet aliquet. In quis efficitur tellus, dignissim ultricies nunc. Curabitur nec erat sed odio vestibulum finibus.
+            </p>
+            <p>
+              Sed mattis leo pretium lectus molestie, quis fringilla ante facilisis. Pellentesque interdum laoreet turpis ac pretium. Cras ac ullamcorper ante. Etiam quis convallis libero. Pellentesque ultrices, magna nec fringilla convallis, nunc mi bibendum nisi, at fringilla lacus tortor eu urna. Phasellus quis diam nec nunc sagittis pulvinar. Fusce velit magna, rutrum id euismod ut, tincidunt nec ipsum. Fusce eleifend mi ligula, ut bibendum metus imperdiet vel. Donec consectetur mi a imperdiet aliquet. In quis efficitur tellus, dignissim ultricies nunc. Curabitur nec erat sed odio vestibulum finibus.
+            </p>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <img src="{% static 'img/clinic.jpg' %}" alt="Foto da clínica" class="img-responsive">
+          </div>
+        </div>
+        <div class="row inner">
+          <div class="col-md-4 col-sm-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <p><i class="fa fa-heart"></i></p>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Mother Care</h4>
+                <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <p><i class="fa fa-user-md"></i></p>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Child Care</h4>
+                <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <p><i class="fa fa-ambulance"></i></p>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Parent Care</h4>
+                <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <p><i class="fa fa-stethoscope"></i></p>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Critical Treatments</h4>
+                <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <p><i class="fa fa-medkit"></i></p>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">All Major Tests</h4>
+                <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <p><i class="fa fa-flask"></i></p>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Modern Laboratory</h4>
+                <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <!---Service Section Ends-->
+    <!-- Professional section start -->
+    <section id="professional" class="doctor-detail">
+    			<div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="heading-col">
+                  <h2>Profissional</h2>
+                  <div class="border"></div>
+                  <div class="gap-30"></div>
+                </div>
+              </div>
+            </div>
+    				<div class="row">
+    					<div class="col-md-4">
+    						<div class="chefs-single">
+    							<div class="thumb">
+    								<img src="{% static 'www/img/dc1.jpg' %}" alt="">
+    							</div>
+    							<div class="text">
+    								<h2>Claudio Maniglia</h2>
+    								<h3>Endodontista</h3>
+    								<p>
+                      Paragrafo
+    								</p>
+    							</div>
+    							<div class="social">
+    								<div class="title">
+    									Redes Sociais
+    								</div>
+    								<ul>
+    									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+    									<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+    									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+    								</ul>
+    							</div>
+    						</div>
+    					</div>
+    					<div class="col-md-8">
+
+    						<!-- Team Detail Tab Start -->
+    						<div class="doctor-detail-tab">
+
+
+    							<!-- Tab Content Start -->
+    									<div class="row">
+    										<div class="col-md-12 content-col">
+    											<div class="content">
+    												<h2>Sobre</h2>
+    												<p>
+    													Enim venenatis nisl wisi quis, in wisi. Sollicitudin eget mollis accumsan, ut wisi maecenas tortor. Magna vehicula auctor lacus aliquam. Vehicula bibendum ut sed class erat, et et risus vel pede ac, purus orci. Nulla integer sed sem. Ut erat dolor lectus consectetuer, vel tincidunt integer duis euismod nunc, pede pede nec mauris in, vel sem fuga dis ligula. Ridiculus placerat, odio ut, mauris per vitae vehicula lorem sed vestibulum, nec fusce cras orci enim.
+    												</p>
+    												<h2>Educação</h2>
+    												<p>
+    													Pellentesque nulla ut. Convallis eleifend ut est dui eros, porta enim odio luctus, sed orci nonummy tellus, wisi enim venenatis magnis, dolor nunc.
+    												</p>
+    												<h2>Experiência</h2>
+    												<p>
+    													Sociosqu at metus luctus feugiat integer, imperdiet auctor risus. Vel ultricies dis et at sodales. Massa id urna eros tempor. Fusce lobortis dolor viverra, tempor consequat nibh, eget faucibus sapien porttitor wisi, velit et. Sollicitudin consectetuer interdum gravida metus maecenas.
+    												</p>
+    											</div>
+    										</div>
+    									</div>
+
+    							<!-- Tab Content End -->
+    						</div>
+    						<!-- Chefs Detail Tab End -->
+
+    					</div>
+    				</div>
+    			</div>
+    		</section>
+    <!-- Professional section ends -->
+    <!-- Blog section start -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading-col">
+              <h2>Blog</h2>
+              <div class="border"></div>
+              <div class="gap-30"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+      </div>
+    </section>
+    <!-- Blog section end -->
+    <!-- Contact section starts -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row inner">
+          <div class="col-md-12">
+            <div class="heading-col">
+              <h2>Contato</h2>
+              <div class="border"></div>
+              <p class="down">Tire suas dúvidas, entre em contato já!</p>
+              <div class="gap-30"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row inner">
+  				<div class="col-sm-12 col-md-6">
+  					<div class="msg">
+  						<div id="message-contact"></div>
+  						<form action="mail/contact.php" method="post" id="contactform">
+  							<div class="form-group">
+  								<input type="text" class="form-control" placeholder="Enter Full Name" required="required" id="visitor_name" name="visitor_name">
+  							</div>
+  							<div class="form-group">
+                  <input type="email" class="form-control" placeholder="Enter Email Address" required="required" id="visitor_email" name="visitor_email">
+  							</div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Enter Phone Number" required="required" id="visitor_phone" name="visitor_phone">
+                </div>
+  							<div class="form-group">
+  								<textarea class="form-control" id="visitor_comment" name="visitor_comment" cols="30" rows="10" placeholder="Enter Message" required="required"></textarea>
+  							</div>
+  							<input type="submit" value="Enviar" class="btn btn-primary" id="submit-contact">
+  						</form>
+  					</div>
+  				</div> <!-- end col form -->
+          <div class="col-sm-12 col-md-6">
+            <div class="map-responsive">
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Contact section end -->
+    <!--Footer Section Start -->
+  	<section class="footer-main">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
+  					<h3>Sobre</h3>
+  					<p>
+  						Dicant discere pro no, no pri prima facilisi. Sit munere voluptaria ea. Ex per fugit prodesset adipiscing, viderer aliquam et vim. Id enim esse deleniti mel, vix eirmod omittam constituam ad.
+  					</p>
+  				</div>
+  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
+  					<h3>Serviços</h3>
+  					<div class="row">
+  						<div class="col-md-12">
+  							<ul>
+  								<li><a href="#">Modern Laboratory</a></li>
+  								<li><a href="#">Critical Treatments</a></li>
+  								<li><a href="#">Major Tests</a></li>
+  								<li><a href="#">Child Care</a></li>
+  							</ul>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
+  					<h3>Links Importantes</h3>
+  					<div class="row">
+  						<div class="col-md-12">
+  							<ul>
+  								<li><a href="#home">Home Page</a></li>
+  								<li><a href="#about">Blog Page</a></li>
+  								<li><a href="#">Services Page</a></li>
+  								<li><a href="#">Contact Page</a></li>
+  							</ul>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
+  					<h3>Localização</h3>
+  					<div class="contact-item">
+  						<div class="icon"><i class="fa fa-map-marker"></i></div>
+  						<div class="text">Unum debitis pro id</div>
+  					</div>
+  					<div class="contact-item">
+  						<div class="icon"><i class="fa fa-phone"></i></div>
+  						<div class="text">123-456-7878</div>
+  					</div>
+  					<div class="contact-item">
+  						<div class="icon"><i class="fa fa-fax"></i></div>
+  						<div class="text">123-456-7890</div>
+  					</div>
+  					<div class="contact-item">
+  						<div class="icon"><i class="fa fa-envelope-o"></i></div>
+  						<div class="text">info@info.com</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+  	<!-- Footer Main End -->
+  	<!-- Footer Bottom Start -->
+  	<div class="footer-bottom">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-6 copyright">
+  					Copyright &copy; 2017. Desenvolvido por <a href="https://acens.uece.br" target="_blank">Acens</a> - Mentes em desenvolvimento.
+  				</div>
+  				<div class="col-md-6 footer-menu">
+  					<ul>
+  						<li><a href=""><i class="fa fa-facebook"></i></a></li>
+  						<li><a href=""><i class="fa fa-twitter"></i></a></li>
+  						<li><a href=""><i class="fa fa-pinterest"></i></a></li>
+  						<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+  						<li><a href=""><i class="fa fa-youtube"></i></a></li>
+  					</ul>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	<!-- Footer Bottom End -->
+  	<a href="#" class="scrollup">
+  		<i class="fa fa-angle-up"></i>
+  	</a>
+    <!-- <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script> -->
+    <!-- <script type="text/javascript" src="{% static 'js/blog.js' %}"></script> -->
+    <script src="{% static 'www/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'www/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'www/js/superfish.js' %}"></script>
+    <script src="{% static 'www/js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'www/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'www/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'www/js/owl.animate.js' %}"></script>
+    <script src="{% static 'www/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'www/js/jquery.counterup.js' %}"></script>
+    <script src="{% static 'www/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'www/js/custom.js' %}"></script>
   </body>
 </html>
