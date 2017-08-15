@@ -1,6 +1,6 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/body.html' %}
 {% load staticfiles %}
-{% block content %}
+{% block blog %}
   {% for tag in tags %}
     {% for post in posts%}
       {% if post.type_post == tag %}
@@ -8,7 +8,7 @@
           <div class="thumbnail">
               <img src="{% static 'www/img/blog1.jpg' %}" alt="">
               <div class="caption">
-                <h4><a href="blog-details.html">{{ post.title }}</a></h4>
+                <h4><a href="#">{{ post.title }}</a></h4>
                 <div class="comment">
                   <ul>
                     <li>
@@ -20,7 +20,7 @@
                   </ul>
                 </div>
               <p class="all">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-              <p class="submit"><a href="blog-details.html" class="btn btn-primary">Leia mais</a></p>
+              <p class="submit"><a href="#" class="btn btn-primary">Leia mais</a></p>
               </div>
           </div>
         </div>
@@ -28,4 +28,4 @@
     {% endfor %}
   {% endfor %}
 
-{% endblock content %}
+{% endblock blog %}
