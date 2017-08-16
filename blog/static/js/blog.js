@@ -1,3 +1,9 @@
+/* activate scrollspy menu */
+$('body').scrollspy({
+  target: '#main-nav',
+  offset: 52
+});
+
 var $doc = $('html, body');
 $('a').click(function() {
     $doc.animate({
