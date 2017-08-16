@@ -50,17 +50,17 @@
     </div>
     <!--Heading Bar End-->
 
-    <header>
+    <header id="main-nav">
       <div class="container">
         <div class="row">
           <div class="col-md-3 logo">
-            <a href="#home"><img src="{% static 'www/img/logo.png' %}" alt=""></a>
+            <a href="#"><img src="{% static 'www/img/logo.png' %}" alt=""></a>
           </div>
           <!-- Nav Start -->
           <div class="col-md-9 nav-wrapper">
             <div class="nav">
               <ul class="sf-menu" id="menu">
-                <li class="current-menu-item"><a href="#">Início</a></li>
+                <li class="current-menu-item active"><a href="#home">Início</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#professional">Profissional</a></li>
                 <li><a href="#blog">Blog</a>
@@ -81,65 +81,7 @@
     {% block content %}
 
     {% endblock %}
-    <!--Footer Section Start -->
-  	<section class="footer-main">
-  		<div class="container">
-  			<div class="row">
-  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-  					<h3>Sobre</h3>
-  					<p>
-  						Dicant discere pro no, no pri prima facilisi. Sit munere voluptaria ea. Ex per fugit prodesset adipiscing, viderer aliquam et vim. Id enim esse deleniti mel, vix eirmod omittam constituam ad.
-  					</p>
-  				</div>
-  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-  					<h3>Serviços</h3>
-  					<div class="row">
-  						<div class="col-md-12">
-  							<ul>
-  								<li><a href="#">Serviço 1</a></li>
-  								<li><a href="#">Serviço 2</a></li>
-  								<li><a href="#">Serviço 3</a></li>
-  								<li><a href="#">Serviço 4</a></li>
-  							</ul>
-  						</div>
-  					</div>
-  				</div>
-  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-  					<h3>Links Importantes</h3>
-  					<div class="row">
-  						<div class="col-md-12">
-  							<ul>
-  								<li><a href="#home">Link 1</a></li>
-  								<li><a href="#about">Link 2</a></li>
-  								<li><a href="#">Link 3</a></li>
-  								<li><a href="#">Link 4</a></li>
-  							</ul>
-  						</div>
-  					</div>
-  				</div>
-  				<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-  					<h3>Localização</h3>
-  					<div class="contact-item">
-  						<div class="icon"><i class="fa fa-map-marker"></i></div>
-  						<div class="text">Unum debitis pro id</div>
-  					</div>
-  					<div class="contact-item">
-  						<div class="icon"><i class="fa fa-phone"></i></div>
-  						<div class="text">123-456-7878</div>
-  					</div>
-  					<div class="contact-item">
-  						<div class="icon"><i class="fa fa-fax"></i></div>
-  						<div class="text">123-456-7890</div>
-  					</div>
-  					<div class="contact-item">
-  						<div class="icon"><i class="fa fa-envelope-o"></i></div>
-  						<div class="text">info@info.com</div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</section>
-  	<!-- Footer Main End -->
+
   	<!-- Footer Bottom Start -->
   	<div class="footer-bottom">
   		<div class="container">
@@ -168,6 +110,7 @@
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script> -->
     <!-- <script type="text/javascript" src="{% static 'js/blog.js' %}"></script> -->
     <script src="{% static 'www/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'www/js/jquery.nav.js' %}"></script>
     <script src="{% static 'www/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'www/js/superfish.js' %}"></script>
     <script src="{% static 'www/js/jquery.mixitup.min.js' %}"></script>
@@ -178,5 +121,6 @@
     <script src="{% static 'www/js/jquery.counterup.js' %}"></script>
     <script src="{% static 'www/js/waypoints.min.js' %}"></script>
     <script src="{% static 'www/js/custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
   </body>
 </html>
