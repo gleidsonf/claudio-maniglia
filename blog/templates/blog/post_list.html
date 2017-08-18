@@ -8,7 +8,7 @@
           <div class="thumbnail">
               <img src="{% static 'www/img/blog1.jpg' %}" alt="">
               <div class="caption">
-                <h4><a href="#">{{ post.title }}</a></h4>
+                <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
                 <div class="comment">
                   <ul>
                     <li>
