@@ -23,4 +23,4 @@ def post_list(request):
 def post_by_type(request, pk):
     type = Type.objects.get(pk=pk)
     posts = get_list_or_404(Post, type_post=type)
-    return render(request, 'blog/post_list.html', {'posts': posts })
+    return render(request, 'blog/post_filter.html', {'posts': posts, 'tag': type })

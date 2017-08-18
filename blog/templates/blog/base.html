@@ -78,7 +78,7 @@
                 <li><a href="#blog">Blog</a>
                   <ul>
                     {% for tag in tags %}
-                    <li><a href="#">{{ tag.title }}</a></li>
+                    <li><a href="{% url 'post_by_type' pk=tag.pk %}">{{ tag.title }}</a></li>
                     {% endfor %}
                   </ul>
                 </li>
@@ -115,6 +115,7 @@
   		</div>
   	</div>
   	<!-- Footer Bottom End -->
+
   	<a href="#home" class="scrollup">
   		<i class="fa fa-angle-up"></i>
   	</a>

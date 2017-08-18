@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	<div class="container-fulied service-bg" id="uni">
+		<div class="row">
+			<div id="universal"></div>
+				<div class="col-md-12">
+					<h2>Blog</h2>
+					<p><a href="{% url 'root_url' %}">home</a> → Blog</p>
+				</div>
+		</div>
+	</div>
+	<div class="blog">
+		<div class="container">
+			<div class="row">
+			{% for post in posts %}
+				<div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      	<img src="img/blog1.jpg" alt="">
+				      	<div class="caption">
+					        <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
+					        <div class="comment">
+					        	<ul>
+					        		<li>
+					        			<i class="fa fa-calendar-check-o"></i><span>{{ post.created_date }}</span>
+					        		</li>
+					        		<li>
+					        			<i class="fa fa-user"></i><span>Admin</span>
+					        		</li>
+					        	</ul>
+					        </div>
+						    <p class="all">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+						    <p class="submit"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Leia mais</a></p>
+				      	</div>
+				   	</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
