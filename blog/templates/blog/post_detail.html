@@ -1,13 +1,41 @@
 {% extends 'blog/base.html' %}
 {% load staticfiles %}
-<div class="container-fluid">
+{% block content %}
 
-  {% block content %}
-    {% if post.published_date %}
-      {{ post.published_date }}
-    {% endif %}
-    <h2>{{ post.title }}</h2>
-    {{ post.text|linebreaksbr }}
+  <div class="container-fulied service-bg" id="uni">
+  	<div class="row">
+  		<div id="universal"></div>
+  			<div class="col-md-12 pt">
+  				<h2>{{ post.title }}</h2>
+  				<p><a href="/">home</a> → BLOG</p>
+  			</div>
 
-  {% endblock %}
+  	</div>
+  </div>
+
+  <div class="container blog-side">
+		<div class="row inner">
+			<div class="col-md-8 col-md-offset-2 top">
+					<div class="bg">
+						<div class="img">
+							<img src="{% static 'www/img/blog1.jpg' %}" alt="">
+						</div>
+						<div class="icon">
+							<ul>
+                <li><a href="#"><i class="fa fa-user"></i>{{ post.author }}</a></li>
+								<li><i class="fa fa-calendar-check-o"></i>{{ post.created_date }}</li>
+                <li><i class="fa fa-calendar-plus-o"></i>{{ post.published_date }}</li>
+
+
+							</ul>
+						</div>
+					</div>
+				<div class="text">
+					<h2>{{ post.title }}</h2>
+          <p>{{ post.text|linebreaksbr }}</p>
+
+			</div>
+		</div>
+	</div>
 </div>
+{% endblock %}

@@ -1037,7 +1037,7 @@ All Page header Background Css
 #uni {
     width: 100%;
     height: 300px;
-    background: url(img/service.jpg);
+    background: url(../img/service.jpg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
