@@ -16,7 +16,7 @@
 			{% for post in posts %}
 				<div class="col-sm-6 col-md-4">
 				    <div class="thumbnail">
-				      	<img src="img/blog1.jpg" alt="">
+				      	<img src="{% static 'www/img/blog1.jpg' %}" alt="Imagem post">
 				      	<div class="caption">
 					        <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
 					        <div class="comment">
