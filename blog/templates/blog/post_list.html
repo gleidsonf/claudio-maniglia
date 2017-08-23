@@ -6,7 +6,7 @@
       {% if post.type_post == tag %}
           <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="thumbnail">
-              <img src="{% static 'www/img/blog1.jpg' %}" alt="">
+              <img src="{{ post.photo_url }}" alt="">
               <div class="caption">
                 <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
                 <div class="comment">
