@@ -16,7 +16,7 @@
 			{% for post in posts %}
 				<div class="col-sm-6 col-md-4">
 				    <div class="thumbnail">
-				      	<img src="{% static 'www/img/blog1.jpg' %}" alt="Imagem post">
+				      	<img src="{{ post.photo.url }}" alt="Imagem post">
 				      	<div class="caption">
 					        <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
 					        <div class="comment">
@@ -25,11 +25,11 @@
 					        			<i class="fa fa-calendar-check-o"></i><span>{{ post.created_date }}</span>
 					        		</li>
 					        		<li>
-					        			<i class="fa fa-user"></i><span>Admin</span>
+					        			<i class="fa fa-user"></i><span>{{ post.author }}</span>
 					        		</li>
 					        	</ul>
 					        </div>
-						    <p class="all">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+						    <p class="all">{{ post.text|slice:":100" }} (...)</p>
 						    <p class="submit"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Leia mais</a></p>
 				      	</div>
 				   	</div>

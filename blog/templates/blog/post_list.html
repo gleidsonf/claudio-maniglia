@@ -6,7 +6,7 @@
       {% if post.type_post == tag %}
           <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="thumbnail">
-              <img src="{{ post.photo_url }}" alt="">
+              <img src="{{ post.photo_url }}" alt="" class="img-responsive">
               <div class="caption">
                 <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
                 <div class="comment">
@@ -19,7 +19,7 @@
                     </li>
                   </ul>
                 </div>
-              <p class="all">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+              <p class="all">{{ post.text|slice:":100" }} (...)</p>
               <p class="submit"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Leia mais</a></p>
               </div>
           </div>
