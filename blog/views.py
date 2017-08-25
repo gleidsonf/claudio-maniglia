@@ -17,7 +17,7 @@ def body(request):
 
 def post_list(request):
     tags = Type.objects.all()
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:3]
     return render(request, 'blog/post_list.html', {'posts': posts, 'tags': tags})
 
 def post_by_type(request, pk):
