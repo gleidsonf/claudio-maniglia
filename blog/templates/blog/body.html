@@ -137,7 +137,7 @@
                 <h2>Claudio Maniglia</h2>
                 <h3>Endodontista</h3>
                 <p>
-                  
+
                 </p>
               </div>
               <div class="social">
@@ -224,7 +224,9 @@
       <div class="col-sm-12 col-md-6">
         <div class="msg">
           <div id="message-contact"></div>
-          <form action="mail/contact.php" method="post" id="contactform">
+          {% block contact %}
+          {% endblock %}
+          <form action="mail/contact.php" method="post" id="contactform" class="hidden">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Digite seu nome" required="required" id="visitor_name" name="visitor_name">
             </div>
