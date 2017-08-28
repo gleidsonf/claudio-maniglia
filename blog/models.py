@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import RegexValidator
 from django.conf import settings
 
 class Type(models.Model):
@@ -16,7 +17,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     type_post = models.ForeignKey('blog.Type')
     photo = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/no-image.png')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=30)
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
@@ -34,3 +35,11 @@ class Post(models.Model):
     def photo_url(self):
         if self.photo and hasattr(self.photo, 'url'):
             return self.photo.url
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=70, blank=False)
+    email = models.CharField(max_length=100, blank=True)
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+    phone_number = models.CharField(max_length=15, validators=[phone_regex], blank=False) # validators should be a list
+    message = models.TextField()
