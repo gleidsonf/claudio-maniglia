@@ -29,7 +29,7 @@
 					        		</li>
 					        	</ul>
 					        </div>
-						    <p class="all">{{ post.text|slice:":100" }} (...)</p>
+						    <p class="all">{{ post.text|striptags|safe|slice:":100" }} (...)</p>
 						    <p class="submit"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Leia mais</a></p>
 				      	</div>
 				   	</div>

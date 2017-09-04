@@ -2,6 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import RegexValidator
 from django.conf import settings
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 class Type(models.Model):
     author = models.ForeignKey('auth.User')
@@ -18,7 +21,7 @@ class Post(models.Model):
     type_post = models.ForeignKey('blog.Type')
     photo = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/no-image.png')
     title = models.CharField(max_length=30)
-    text = models.TextField()
+    text = RichTextUploadingField(config_name='awesome_ckeditor')
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(

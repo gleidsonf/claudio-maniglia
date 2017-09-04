@@ -93,6 +93,7 @@ body {
     background: #fff;
     font-size: 14px;
     overflow-x: hidden;
+    overflow: hidden !important;
 }
 .bg-gray {
     background: #f6f6f6;

@@ -4,6 +4,8 @@ $('body').scrollspy({
   offset: 52
 });
 
+$('.blog-side img').addClass('img-responsive')
+
 var $doc = $('html, body');
 $('a').click(function() {
     $doc.animate({
