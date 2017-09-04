@@ -19,6 +19,12 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 
+
+admin.site.site_title = 'Claudio Maniglia'
+
+admin.site.site_header = 'Acens administracao'
+# admin.site.site_header = '<img class="responsive-img" src="/static/material/imgs/logo.png">'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
