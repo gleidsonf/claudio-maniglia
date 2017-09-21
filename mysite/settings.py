@@ -165,10 +165,13 @@ CKEDITOR_CONFIGS = {
             ['RemoveFormat', 'Source'],
             '/',
             {'name': 'insert',
-             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar']},
+             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'Video', 'Iframe']},
             '/',
             {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-
+            {
+                'name': 'youtube',
+                'items': ['Youtube',]
+            }
         ],
         # 'toolbar_YourCustomToolbarConfig': [
         #     {'name': 'document', 'items': ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
@@ -211,7 +214,9 @@ CKEDITOR_CONFIGS = {
             'clipboard',
             'dialog',
             'dialogui',
-            'elementspath'
+            'elementspath',
+            'video',
+            'iframe'
         ]),
     },
 }
