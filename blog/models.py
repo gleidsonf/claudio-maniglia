@@ -49,3 +49,14 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Curso(models.Model):
+    titulo = models.CharField(max_length=120, blank=False)
+    local = models.CharField(max_length=120, blank=False)
+    duracao = models.CharField(max_length=50, blank=True)
+    data_inicio = models.DateTimeField(blank=False)
+    data_termino = models.DateTimeField(blank=False)
+
+    def __str__(self):
+        return self.titulo

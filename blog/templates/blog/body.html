@@ -11,7 +11,7 @@
       <div class="overlay"></div>
       <div class="text">
         <div class="this-item">
-          <h2>Cláudio ManigliA</h2>
+          <h2>Cláudio Maniglia</h2>
         </div>
         <div class="this-item">
           <h3>Atendimento rápido e eficiente</h3>
@@ -206,6 +206,48 @@
   </div>
 </section>
 <!-- Blog section end -->
+
+<!-- Contact section starts -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="row inner">
+      <div class="col-md-12">
+        <div class="heading-col">
+          <h2>Cursos</h2>
+          <div class="border"></div>
+          <p class="down">Acompanhe meus cursos!</p>
+          <div class="gap-30"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row inner">
+      {% for post in posts %}
+      <p>{{post.title}}</p>
+      {% endfor %}
+      {% for curso in cursos %}
+        <div class="col-sm-12 col-md-6">
+          <div class="thumbnail">
+            <div class="caption">
+              <h4>{{ curso.titulo }}</h4>
+              <div class="comment">
+                  <ul>
+                    <li>
+                      <i class="fa fa-calendar-check-o"></i><span>{{ curso.data_inicio}}</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-user"></i><span>{{ curso.data_termino }}</span>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+      <!-- Cursos section end -->
 <!-- Contact section starts -->
 <section id="contact" class="contact">
   <div class="container">
@@ -222,11 +264,31 @@
 
     <div class="row inner">
       <div class="col-sm-12 col-md-6">
-        <div class="msg">
-          <div id="message-contact"></div>
-          {% block contact %}
-          {% endblock %}
 
+        <div class="service">
+          <div class="media">
+            <div class="media-left media-middle">
+              <p><i class="fa fa-facebook "></i></p>
+            </div>
+            <div class="media-right media-middle">
+                <a href="#"><h4 class="media-heading text-center">Facebook</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-detail">
+          <div class="chefs-single">
+
+            <div class="social">
+              <div class="title">
+                Redes Sociais
+              </div>
+              <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div> <!-- end col form -->
       <div class="col-sm-12 col-md-6">

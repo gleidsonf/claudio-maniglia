@@ -2,20 +2,22 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.mail import EmailMessage
 from django.utils import timezone
-from .models import Post
-from .models import Type
+from .models import Post, Type, Curso
 from .forms import ContactForm
 
 def base(request):
+    cursos = Curso.objects.all()
     tags = Type.objects.all()
-    return render(request, 'blog/base.html', {'tags': tags})
+    return render(request, 'blog/base.html', {'tags': tags, 'cursos': cursos})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def body(request):
-    return render(request, 'blog/body.html', {})
+    cursos = Curso.objects.all()
+    posts = Post.objects.all()
+    return render(request, 'blog/body.html', {'posts': posts, 'cursos': cursos})
 
 def post_list(request):
     tags = Type.objects.all()

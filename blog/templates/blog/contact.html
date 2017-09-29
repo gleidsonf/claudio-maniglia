@@ -1,8 +1,14 @@
 {% extends 'blog/body.html' %}
 {% load staticfiles %}
 {% block contact %}
-<form method="POST" class="post-form test">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-primary">Enviar</button>
-</form>
+  <div class="social">
+    <div class="title">
+      Redes Sociais
+    </div>
+    <ul>
+      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+  </div>
 {% endblock %}
