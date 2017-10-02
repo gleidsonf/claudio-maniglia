@@ -21,6 +21,7 @@ def body(request):
 
 def post_list(request):
     tags = Type.objects.all()
+    cursos = Curso.objects.all()
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-created_date')[:3]
     if request.method == "POST":
         form = ContactForm(request.POST)
@@ -36,7 +37,7 @@ def post_list(request):
             return redirect('root_url')
     else:
         form = ContactForm()
-    return render(request, 'blog/index.html', {'posts': posts, 'tags': tags, 'form': form })
+    return render(request, 'blog/index.html', {'posts': posts, 'tags': tags, 'form': form, 'cursos': cursos })
 
 def post_by_type(request, pk):
     type = Type.objects.get(pk=pk)
