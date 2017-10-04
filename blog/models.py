@@ -53,6 +53,7 @@ class Contact(models.Model):
 
 class Curso(models.Model):
     titulo = models.CharField(max_length=120, blank=False)
+    descricao = models.TextField(blank=False)
     local = models.CharField(max_length=120, blank=False)
     duracao = models.CharField(max_length=50, blank=True)
     data_inicio = models.DateTimeField(blank=False)

@@ -67,25 +67,15 @@
                 <li class="current-menu-item active"><a href="{% url 'root_url' %}#home">Início</a></li>
                 <li><a href="{% url 'root_url' %}#about">Sobre</a></li>
                 <li><a href="{% url 'root_url' %}#professional">Profissional</a></li>
-                <li><a href="{% url 'root_url' %}#blog">Blog</a>
-                  <ul>
-                    {% for tag in tags %}
-                    <li><a href="#">{{ tag.title }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </li>
+                <li><a href="{% url 'root_url' %}#blog">Blog</a></li>
+                <li><a href="{% url 'root_url' %}#cursos">Cursos</a></li>
                 <li><a href="{% url 'root_url' %}#contact">Contato</a></li>
                 {% else %}
                 <li class="current-menu-item active"><a href="#home">Início</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#professional">Profissional</a></li>
-                <li><a href="#blog">Blog</a>
-                  <ul>
-                    {% for tag in tags %}
-                    <li><a href="{% url 'post_by_type' pk=tag.pk %}">{{ tag.title }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#cursos">Cursos</a></li>
                 <li><a href="#contact">Contato</a></li>
                 {% endif %}
               </ul>

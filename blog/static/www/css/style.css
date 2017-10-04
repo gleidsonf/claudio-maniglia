@@ -3468,3 +3468,7 @@ Media Query
 #contact .service {
   padding: 0px;
 }
+
+.description {
+  margin: 10px 0px 10px 0px;
+}

@@ -15,13 +15,13 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def body(request):
-    cursos = Curso.objects.all()
+    cursos = Curso.objects.all().order_by('-created_date')
     posts = Post.objects.all()
     return render(request, 'blog/body.html', {'posts': posts, 'cursos': cursos})
 
 def post_list(request):
     tags = Type.objects.all()
-    cursos = Curso.objects.all()
+    cursos = Curso.objects.all().order_by('-id')
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-created_date')[:3]
     if request.method == "POST":
         form = ContactForm(request.POST)
