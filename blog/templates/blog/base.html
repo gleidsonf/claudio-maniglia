@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="{% static 'www/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'www/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'www/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'www/css/infinite-slider.css' %}">
     <link rel="stylesheet" href="{% static 'www/css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
   </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div id="preloader">
@@ -64,19 +67,21 @@
             <div id="main-nav" class="nav">
               <ul class="sf-menu" id="menu">
                 {% if request.resolver_match.url_name != 'root_url' %}
-                <li class="current-menu-item active"><a href="{% url 'root_url' %}#home">Início</a></li>
-                <li><a href="{% url 'root_url' %}#about">Sobre</a></li>
-                <li><a href="{% url 'root_url' %}#professional">Profissional</a></li>
-                <li><a href="{% url 'root_url' %}#blog">Blog</a></li>
-                <li><a href="{% url 'root_url' %}#cursos">Cursos</a></li>
-                <li><a href="{% url 'root_url' %}#contact">Contato</a></li>
+                  <li class="current-menu-item active"><a href="{% url 'root_url' %}#home">Início</a></li>
+                  <li><a href="{% url 'root_url' %}#about" class="scrollSuave">Sobre</a></li>
+                  <li><a href="{% url 'root_url' %}#equipamento">Equipamentos</a></li>
+                  <li><a href="{% url 'root_url' %}#professional">Profissional</a></li>
+                  <li><a href="{% url 'root_url' %}#blog">Blog</a></li>
+                  <li><a href="{% url 'root_url' %}#cursos">Cursos</a></li>
+                  <li><a href="{% url 'root_url' %}#contact">Contato</a></li>
                 {% else %}
-                <li class="current-menu-item active"><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#professional">Profissional</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#contact">Contato</a></li>
+                  <li class="current-menu-item active"><a href="#home">Início</a></li>
+                  <li><a href="#about">Sobre</a></li>
+                  <li><a href="#equipamento">Equipamentos</a></li>
+                  <li><a href="#professional">Profissional</a></li>
+                  <li><a href="#blog">Blog</a></li>
+                  <li><a href="#cursos">Cursos</a></li>
+                  <li><a href="#contact">Contato</a></li>
                 {% endif %}
               </ul>
             </div>
@@ -127,7 +132,9 @@
     <script src="{% static 'www/js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'www/js/jquery.counterup.js' %}"></script>
     <script src="{% static 'www/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'www/js/slick.js' %}"></script>
     <script src="{% static 'www/js/custom.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+    <script src="{% static 'www/js/scroll-suave.js' %}"></script>
   </body>
 </html>

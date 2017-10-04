@@ -3472,3 +3472,12 @@ Media Query
 .description {
   margin: 10px 0px 10px 0px;
 }
+
+#about a:link {
+  text-decoration: none;
+}
+
+/* Slide responsivo bugando */
+.slick-slide {
+    height: auto;
+}

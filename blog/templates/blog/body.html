@@ -42,7 +42,7 @@
           <h2>Blog informativo</h2>
         </div>
         <div class="this-item">
-          <h3>Saiba mais sobre tratamento de canal e outros procedimentos</h3>
+          <h3>Saiba mais sobre  de canal e outros procedimentos</h3>
         </div>
         <div class="this-item">
           <p><a href="#blog">Acesse o blog</a></p>
@@ -77,44 +77,47 @@
       </div>
     </div>
     <div class="row inner">
+      {% for tag in tags %}
       <div class="col-md-4 col-sm-6">
         <div class="media">
+          <a href="{% url 'post_by_type' pk=tag.pk %}">
           <div class="media-left media-middle">
-            <p><i class="fa fa-check "></i></p>
+            <p><i class="fa fa fa-medkit "></i></p>
           </div>
           <div class="media-body">
-            <h4 class="media-heading">Restauração</h4>
-            <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
+            <h4 class="media-heading">{{ tag.title }}</h4>
+            <p>Clique aqui para saber mais.</p>
           </div>
+        </a>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="media">
-          <div class="media-left media-middle">
-            <p><i class="fa fa-medkit"></i></p>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Tratamento de canal</h4>
-            <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="media">
-          <div class="media-left media-middle">
-            <p><i class="fa fa-star"></i></p>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Clareamento</h4>
-            <p>Quis non odit sordidos, vanos, leves, futtiles? Primum in nostrane potestate est, quid meminerimus.</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
       </div>
     </div>
   </div>
-</div>
 <!---Service Section Ends-->
+<!-- Gallery section start -->
+<div id="equipamento">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-col">
+          <h2>Equipamentos</h2>
+          <div class="border"></div>
+          <div class="gap-30"></div>
+        </div>
+      </div>
+    </div>
+   <div class="customer-logos slider">
+      {% for foto in fotos %}
+      <div class="slide"><img src="{{ foto.imagem_url }}"></div>
+      <div class="slide"><img src="{{ foto.imagem_url }}"></div>
+      <div class="slide"><img src="{{ foto.imagem_url }}"></div>
+
+      {% endfor%}
+  </div>
+</div>
+<!-- Gallery section end -->
 <!-- Professional section start -->
 <section id="professional" class="doctor-detail">
       <div class="container">

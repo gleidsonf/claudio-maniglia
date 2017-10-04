@@ -61,3 +61,20 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class Foto(models.Model):
+    nome = models.CharField(max_length=50)
+    imagem = models.ImageField(upload_to = 'galeria/%Y/%m/%d/')
+    data = models.DateField(default=timezone.now)
+
+    @property
+    def imagem_url(self):
+        if self.imagem and hasattr(self.imagem, 'url'):
+            return self.imagem.url
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.nome
